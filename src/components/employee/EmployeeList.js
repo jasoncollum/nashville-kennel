@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 
 
-export default class EmployeeList extends Component {
+class EmployeeList extends Component {
     render() {
         return (
-            <article>
-                <h1>Employee List</h1>
-                <h2>{this.props.title}</h2>
-                <section>Jessica Younker</section>
-                <section>Jordan Nelson</section>
-                <section>Zoe LeBlanc</section>
-                <section>Blaise Roberts</section>
-            </article>
-        );
+            <section className="employees">
+                <h3>Employees:</h3>
+                {
+                    this.props.employees.map(employee =>
+                        <div key={employee.id}>
+                            {employee.name}
+                        </div>
+                    )
+                }
+            </section>
+        )
     }
 }
+
+export default EmployeeList
