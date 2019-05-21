@@ -9,7 +9,8 @@ class EmployeeList extends Component {
                 {
                     this.props.employees.map(employee =>
                         <div key={employee.id}>
-                            {employee.name}
+                            <p>{employee.name}</p>
+                            <button onClick={this.props.deleteEmployee}>Delete {employee.name.split(' ')[0]}</button>
                         </div>
                     )
                 }

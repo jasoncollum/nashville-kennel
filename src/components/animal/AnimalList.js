@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 class AnimalList extends Component {
+
     render() {
         const animals = this.props.animals;
         // const owners = this.props.owners;
@@ -14,6 +15,7 @@ class AnimalList extends Component {
                             <h3>{animal.name}</h3>
                             <p>{this.props.owners.find(owner => owner.id === animal.ownerId
                             ).name}</p>
+                            <button onClick={() => this.props.deleteAnimal(animal.id)}>Delete {animal.name}</button>
                         </div>
 
                     )
