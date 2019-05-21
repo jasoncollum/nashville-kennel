@@ -1,8 +1,9 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from "react"
-import AnimalList from './animal/AnimalList'
-import LocationList from './location/LocationList'
+import AnimalList from './AnimalList'
+import LocationList from './LocationList'
 import EmployeeList from './employee/EmployeeList'
+import OwnerList from './OwnerList'
 
 
 class ApplicationViews extends Component {
@@ -19,18 +20,26 @@ class ApplicationViews extends Component {
     ]
 
     animalsFromAPI = [
-        { id: 1, name: "Doodles" },
-        { id: 2, name: "Jack" },
-        { id: 3, name: "Angus" },
-        { id: 4, name: "Henley" },
-        { id: 5, name: "Derkins" },
-        { id: 6, name: "Checkers" }
+        { id: 1, name: "Doodles", ownerId: 1 },
+        { id: 2, name: "Jack", ownerId: 2 },
+        { id: 3, name: "Angus", ownerId: 4 },
+        { id: 4, name: "Henley", ownerId: 3 },
+        { id: 5, name: "Derkins", ownerId: 2 },
+        { id: 6, name: "Checkers", ownerId: 1 }
+    ]
+
+    ownersFromAPI = [
+        { id: 1, name: "Jason", phone: "615-111-1111" },
+        { id: 2, name: "Berk", phone: "615-123-1234" },
+        { id: 3, name: "Francis", phone: "615-135-1122" },
+        { id: 4, name: "Linus", phone: "615-789-9900" }
     ]
 
     state = {
         employees: this.employeesFromAPI,
         locations: this.locationsFromAPI,
-        animals: this.animalsFromAPI
+        animals: this.animalsFromAPI,
+        owners: this.ownersFromAPI
     }
 
     render() {
@@ -40,10 +49,13 @@ class ApplicationViews extends Component {
                     return <LocationList locations={this.state.locations} />
                 }} />
                 <Route path="/animals" render={(props) => {
-                    return <AnimalList animals={this.state.animals} />
+                    return <AnimalList animals={this.state.animals} owners={this.state.owners} />
                 }} />
                 <Route path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
+                }} />
+                <Route path="/owners" render={(props) => {
+                    return <OwnerList owners={this.state.owners} />
                 }} />
             </React.Fragment>
         )
