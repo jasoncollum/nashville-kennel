@@ -8,6 +8,7 @@ import AnimalManager from '../modules/AnimalManager'
 import OwnerManager from '../modules/OwnerManager'
 import EmployeeManager from '../modules/EmployeeManager'
 import LocationManager from '../modules/LocationManager'
+// import SearchResults from '../search/SearchResults'
 
 
 class ApplicationViews extends Component {
@@ -15,7 +16,8 @@ class ApplicationViews extends Component {
         employees: [],
         locations: [],
         animals: [],
-        owners: []
+        owners: [],
+        searchResults: []
     }
 
     deleteAnimal = (id) => {

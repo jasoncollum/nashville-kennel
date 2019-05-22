@@ -7,6 +7,17 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 
 class Kennel extends Component {
+    // newState = {}
+    // search = (searchTerm) => {
+
+    // }
+
+    // handleSearch = (e) => {
+    //     if (e.key === 'Enter') {
+    //         this.search(e.target.value)
+    //     }
+    // }
+
     render() {
         return (
             <React.Fragment>
