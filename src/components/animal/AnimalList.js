@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
+import AnimalItem from './AnimalItem'
+import './Animal.css'
 
 class AnimalList extends Component {
 
     render() {
-        const animals = this.props.animals;
-        // const owners = this.props.owners;
-
         return (
             <section className="animals">
-                <h3>Animals:</h3>
                 {
-                    animals.map(animal =>
-                        <div key={animal.id}>
-                            <h3>{animal.name}</h3>
-                            <p>{this.props.owners.find(owner => owner.id === animal.ownerId
-                            ).name}</p>
-                            <button onClick={() => this.props.deleteAnimal(animal.id)}>Delete {animal.name}</button>
-                        </div>
-
+                    this.props.animals.map(animal => {
+                        return <AnimalItem key={animal.id} animal={animal} deleteAnimal={this.props.deleteAnimal} />
+                    }
                     )
                 }
             </section>
