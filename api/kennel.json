@@ -49,6 +49,18 @@
       "id": 6,
       "name": "Checkers",
       "ownerId": 1
+    },
+    {
+      "name": "Ding Dong",
+      "breed": "Mutt",
+      "employeeId": 1,
+      "id": 7
+    },
+    {
+      "name": "Bertie",
+      "breed": "Dog",
+      "employeeId": 1,
+      "id": 8
     }
   ],
   "owners": [

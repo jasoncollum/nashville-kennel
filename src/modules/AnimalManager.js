@@ -18,6 +18,15 @@ export default {
             body: JSON.stringify(obj)
         }).then(r => r.json())
     },
+    post(animal) {
+        return fetch(`${remoteURL}/animals`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(animal)
+        }).then(r => r.json())
+    },
     delete(id) {
         return fetch(`${remoteURL}/animals/${id}`, {
             method: "DELETE",
